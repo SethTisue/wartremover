@@ -38,12 +38,7 @@ lazy val commonSettings = Def.settings(
       "https://github.com/wartremover/wartremover/tree/" + t + "€{FILE_PATH}.scala"
     )
   },
-  sbtVersion := {
-    scalaBinaryVersion.value match {
-      case "2.10" => "0.13.18"
-      case _      => "1.1.6" // don't update sbt 1.2.0. see https://github.com/wartremover/wartremover/issues/433
-    }
-  },
+  sbtVersion := "1.1.6",  // don't update sbt 1.2.0. see https://github.com/wartremover/wartremover/issues/433
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
     if (version.value.trim.endsWith("SNAPSHOT"))
